@@ -10,7 +10,9 @@ services:
     tty: true
 
   fuseki:
-    image: stain/jena-fuseki
+    build:
+      context: .
+      dockerfile: Dockerfile-fuseki
     ports:
       - "3030:3030"
     volumes:
