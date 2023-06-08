@@ -14,7 +14,10 @@ RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/opt/poetry python
     ln -s /opt/poetry/bin/poetry && \
     poetry config virtualenvs.create false
 
-WORKDIR /app
 COPY ./pyproject.toml ./poetry.lock /app/
 
+WORKDIR /app/src
+
 RUN poetry install --no-root
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
