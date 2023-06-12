@@ -18,12 +18,12 @@ handlers:
     class: logging.FileHandler
     level: INFO
     formatter: normal
-    filename: logs/info.log
+    filename: ../logs/info.log
   error_file_handler:
     class: logging.FileHandler
     level: ERROR
     formatter: normal
-    filename: logs/error.log
+    filename: ../logs/error.log
 
 loggers:
   src:
